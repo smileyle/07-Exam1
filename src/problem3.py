@@ -2,8 +2,8 @@
 Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Lauren Smiley.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -43,6 +43,30 @@ def run_test_problem3():
 
 
 def problem3(point, length, delta, window):
+    linus = rg.Line(point, rg.Point(point.x, point.y + length))
+    linus.thickness = 3
+    linus.color = 'black'
+    linus.attach_to(window)
+    height = 0
+    range1 = length // delta
+    color = 0
+    for k in range(range1 + 1):
+        line = rg.Line(rg.Point(point.x, point.y + height), rg.Point(point.x + length, point.y + height))
+        line.thickness = 3
+        line.attach_to(window)
+        window.render()
+        height = height + delta
+        length = length + 20
+        color = color + 1
+        if color == 1:
+            line.color = 'magenta'
+        if color == 2:
+            line.color = 'cyan'
+        if color == 3:
+            line.color = 'spring green'
+        window.render()
+
+
     """
     See   problem3_picture.pdf   in this project for pictures
     that may help you better understand the following specification:

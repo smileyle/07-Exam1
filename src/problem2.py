@@ -2,13 +2,13 @@
 Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Lauren Smiley.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import testing_helper
 import time
 import math
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -20,7 +20,7 @@ def main():
 def problem2a_testing():
     """ Tests the   sum_of_digits_of_sum_of_factors   function. """
     ############################################################################
-    #  TODO: 2. Implement this TEST function.  See the IMPORTANT NOTE below.
+    #  Done: 2. Implement this TEST function.  See the IMPORTANT NOTE below.
     #     This problem TESTS the    sum_of_digits_of_sum_of_factors    function
     #     that is defined below.  Include at least **   4   ** tests.
     #     Use the usual format:
@@ -31,9 +31,9 @@ def problem2a_testing():
     #       print('Expected:', expected)
     #       print('Actual:  ', actual)
     #
-    #  TODO (continued): IMPORTANT NOTE:
-    #  TODO (continued):   The function that you are TESTING is PURPOSELY
-    #  TODO (continued)    NOT implemented.  Do NOT implement it.  That is,
+    #  Done (continued): IMPORTANT NOTE:
+    #  Done (continued):   The function that you are TESTING is PURPOSELY
+    #  Done (continued)    NOT implemented.  Do NOT implement it.  That is,
     #                   do NOT implement the
     #                           sum_of_digits_of_sum_of_factors
     #                   function!  Just write these TESTS of that function
@@ -44,7 +44,30 @@ def problem2a_testing():
     print('---------------------------------------------------------')
     print('Testing the   sum_of_digits_of_sum_of_factors   function:')
     print('---------------------------------------------------------')
-
+    # Test 1
+    expect1 = 9
+    actual1 = sum_of_digits_of_sum_of_factors(4)
+    print()
+    print('Test 1 expected:', expect1)
+    print('     actual:', actual1)
+    # Test 2
+    expect2 = 9
+    actual2 = sum_of_digits_of_sum_of_factors(10)
+    print()
+    print('Test 2 expected:', expect2)
+    print('     actual:', actual2)
+    # Test 3
+    expect3 = 3
+    actual3 = sum_of_digits_of_sum_of_factors(11)
+    print()
+    print('Test 3 expected:', expect3)
+    print('     actual:', actual3)
+    # Test 4
+    expect4 = 6
+    actual4 = sum_of_digits_of_sum_of_factors(24)
+    print()
+    print('Test 4 expected:', expect4)
+    print('     actual:', actual4)
 
 def sum_of_digits_of_sum_of_factors(n):
     """
@@ -63,8 +86,8 @@ def sum_of_digits_of_sum_of_factors(n):
        *** ASK FOR AN EXPLANATION IF YOU DO NOT UNDERSTAND THE ABOVE. ***
     """
     ############################################################################
-    #  TODO (continued):  This function is PURPOSELY ** not implemented. **
-    #  TODO (continued):  DO NOT IMPLEMENT  sum_of_digits_of_sum_of_factors.
+    #  Done (continued):  This function is PURPOSELY ** not implemented. **
+    #  Done (continued):  DO NOT IMPLEMENT  sum_of_digits_of_sum_of_factors.
     #                     Just leave it as it is (with no code).
     ############################################################################
 
@@ -75,7 +98,7 @@ def sum_of_digits_of_sum_of_factors(n):
 #    just its specification (per the doc-string).
 #    You should  ** CALL **  that function as needed in implementing
 #    the other functions.
-# TODO (continued):  After you have READ this _TODO_, change its _TODO_ to DONE.
+# Done (continued):  After you have READ this _TODO_, change its _TODO_ to DONE.
 ################################################################################
 
 def number_of_factors(n):
@@ -102,8 +125,8 @@ def number_of_factors(n):
 
     return count
     ############################################################################
-    #  TODO (continued):  Students: Do NOT touch the above   number_of_factors
-    #  TODO (continued)   function; CALL it as appropriate in problem(s) below.
+    #  Done (continued):  Students: Do NOT touch the above   number_of_factors
+    #  Done (continued)   function; CALL it as appropriate in problem(s) below.
     ############################################################################
 
 
@@ -284,6 +307,13 @@ def run_test_problem2b():
 
 
 def problem2b(a, b, x):
+    value = 0
+    if a <= b:
+        for k in range((b-a)+1):
+            if number_of_factors(k+a) >= x:
+                value = value + (k+a)
+    return value
+
     """
     What comes in:  Positive integers a, b and x, with a <= b.
     What goes out:
@@ -310,12 +340,12 @@ def problem2b(a, b, x):
          and the sum   16 + 18 + 20 + 24   is 78.
      """
     ############################################################################
-    # TODO: 4. Implement and test this function.  See the IMPORTANT NOTE below!
+    # Done: 4. Implement and test this function.  See the IMPORTANT NOTE below!
     #          Tests have been written for you (above).
     ############################################################################
-    # TODO (continued): IMPORTANT NOTE:
-    # TODO (continued):   **  For full credit you must appropriately use
-    # TODO (continued):       (i.e., call) the   number_of_factors   function
+    # Done (continued): IMPORTANT NOTE:
+    # Done (continued):   **  For full credit you must appropriately use
+    # Done (continued):       (i.e., call) the   number_of_factors   function
     #                         that is DEFINED ABOVE.
     ############################################################################
 
@@ -411,6 +441,14 @@ def run_test_problem2c():
 
 
 def problem1c(m):
+    value = 0
+    for k in range(m+10):
+        if (m+10) > k > m:
+            if number_of_factors(k) <= 2:
+                value = value + k
+    return value
+
+
     """
     What comes in:  An integer  m  that is at least 2.
     What goes out:
@@ -433,14 +471,14 @@ def problem1c(m):
            and 11 + 13 + 17 + 19 = 60.
      """
     ############################################################################
-    # TODO: 4. Implement and test this function.  See the IMPORTANT NOTE below!
+    # Done: 4. Implement and test this function.  See the IMPORTANT NOTE below!
     #          Tests have been written for you (above).
     ############################################################################
-    # TODO (continued): IMPORTANT NOTE:
-    # TODO (continued):   This problem is 1 point (of 100) on the exam.
-    # TODO (continued)    Do not spend more than a few minutes on it.
-    # TODO (continued)    You get   NO credit   if your solution is more
-    # TODO (continued)    than 3 lines of code (and it can be done in 1 line).
+    # Done (continued): IMPORTANT NOTE:
+    # Done (continued):   This problem is 1 point (of 100) on the exam.
+    # Done (continued)    Do not spend more than a few minutes on it.
+    # Done (continued)    You get   NO credit   if your solution is more
+    # Done (continued)    than 3 lines of code (and it can be done in 1 line).
     ############################################################################
 
 
